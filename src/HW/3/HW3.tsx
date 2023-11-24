@@ -15,12 +15,16 @@ export const HW3 = () => {
 
     const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
         let curText = event.currentTarget.value;
-        setCurrentText(curText);
+
+        if (curText !== '') {
+            setCurrentText(curText);
+        }
     };
 
     const handleSave = () => {
         setTexts([...texts, currentText]);
         setCurrentText('');
+        console.log(texts)
     };
 
     return (
@@ -43,11 +47,13 @@ export const HW3 = () => {
 
             <ol id={'hw03-tasks'}>
                 {texts.map((el, index) => {
-                    return (
-                        <li key={index} id={`hw03-task-${index}`}>
-                            {el}
-                        </li>
-                    );
+                    if (el !== '') {
+                        return (
+                            <li key={index} id={`hw03-task-${index}`}>
+                                {el}
+                            </li>
+                        );
+                    }
                 })}
             </ol>
         </div>
