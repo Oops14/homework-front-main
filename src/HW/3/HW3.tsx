@@ -11,7 +11,11 @@ export const HW3 = () => {
 
 
     const [currentText, setCurrentText] = useState('');
-    const [texts, setTexts] = useState<string[]>([]);
+    const [texts, setTexts] = useState<string[]>([
+        'То, что вы делаете по ночам, то и делает вас богатым. (Аль Капоне)',
+    ]);
+    React.useEffect(() => console.log("data", texts), [texts]);
+
 
     const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
         let curText = event.currentTarget.value;
@@ -24,7 +28,6 @@ export const HW3 = () => {
     const handleSave = () => {
         setTexts([...texts, currentText]);
         setCurrentText('');
-        console.log(texts)
     };
 
     return (
