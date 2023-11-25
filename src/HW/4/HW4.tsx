@@ -48,5 +48,3 @@ export const HW4 = () => {
         </div>
     );
 };
-
-// ЕСЛИ ЧЕТН ? S.chetNechet : '' -> li classname

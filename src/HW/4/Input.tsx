@@ -1,4 +1,4 @@
-import {Dispatch, SetStateAction} from "react";
+import {ChangeEvent, Dispatch, SetStateAction} from "react";
 
 type InputPropsType = {
 	currentText: string // НУЖНО ПРОТИПИЗИРОВАТЬ
@@ -6,7 +6,7 @@ type InputPropsType = {
 };
 
 export const Input = (props: InputPropsType) => {
-	const onChangeHandler = (event: any) => {
+	const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		let valueText = event.currentTarget.value;
         props.setCurrentText(valueText);
 	};
